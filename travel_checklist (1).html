@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist lal Safra - Michelle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    body {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      background: linear-gradient(to bottom, #89CFF0, #F0F8FF);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-header {
+      border-bottom: 2px solid #4FD1C5;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2C7A7B;
+    }
+    .card-header .icon {
+      margin-left: 0.75rem;
+      color: #4FD1C5;
+    }
+    input[type='checkbox'] {
+      width: 1.5rem;
+      height: 1.5rem;
+      accent-color: #4FD1C5;
+      margin-left: 0.75rem;
+      cursor: pointer;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      color: #4A5568;
+      padding: 0.5rem 0;
+    }
+    .progress-bar {
+      width: 100%;
+      background-color: #E2E8F0;
+      border-radius: 9999px;
+      height: 1.5rem;
+      margin-top: 1.5rem;
+      overflow: hidden;
+    }
+    .progress {
+      background-color: #4FD1C5;
+      height: 100%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      transition: width 0.5s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <header class="text-center mb-8">
+      <h1 class="text-5xl font-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">🌊 Checklist Safret Michelle 🌴</h1>
+      <p class="text-white text-lg mt-2">Yalla nensa chaghle!</p>
+    </header>
+
+    <div id="progressBarContainer" class="progress-bar">
+      <div id="progress" class="progress">0%</div>
+    </div>
+
+    <form id="checklistForm" class="space-y-6 mt-8">
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-clipboard-check icon"></i>Ta7dirat l Safra</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="packBag"> Dabbet l shanate</label></li>
+          <li><label><input type="checkbox" id="downloadMaps"> Nazzel offline maps</label></li>
+          
+          <li><label><input type="checkbox" id="copyDocs"> Sawwer l passport w l wara2 l mhemme</label></li>
+          <li><label><input type="checkbox" id="chargeElectronics"> Sharrej l electronics</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-plane-departure icon"></i>Wara2 l Safar</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="passport"> Passport, Visa, w Ticket l Tayyara</label></li>
+          <li><label><input type="checkbox" id="hotelBooking"> Hajz l Otel w l Itinerary</label></li>
+          <li><label><input type="checkbox" id="eSIM"> Shere w Taf3il l'eSIM</label></li>
+          <li><label><input type="checkbox" id="cash"> Srouf masare cash (Euro w Lira)</label></li>
+          <li><label><input type="checkbox" id="insurance"> T2akkad men ta2min l safar</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-suitcase-rolling icon"></i>Shanta l Safar</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="tshirts"> Tyeb sayfiyye khafife (T-shirts, shorts...)</label></li>
+          <li><label><input type="checkbox" id="jacket"> Jacket khafife la bared l leil</label></li>
+          <li><label><input type="checkbox" id="shoes"> Sabbout mree7 w sandalet</label></li>
+          <li><label><input type="checkbox" id="underwear"> Underwear w soket</label></li>
+          <li><label><input type="checkbox" id="pyjama"> Pyjama</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-sun icon"></i>La Nzoulet l Baher</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="bikini"> Mayowet</label></li>
+          <li><label><input type="checkbox" id="beachTowel"> Manshafe lal baher</label></li>
+          <li><label><input type="checkbox" id="sunscreen"> Sunscreen w after-sun</label></li>
+          <li><label><input type="checkbox" id="sunglasses"> 3waynet shames w ta2iyye</label></li>
+          <li><label><input type="checkbox" id="beachBag"> Shaantet baher</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-pump-medical icon"></i>Ghrad l Hygiene w l Adwiye</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="toothbrush"> Fersheyt snen w ma3joun</label></li>
+          <li><label><input type="checkbox" id="deodorant"> Deodorant w 3eter</label></li>
+          <li><label><input type="checkbox" id="makeup"> Makeup w makeup remover</label></li>
+          <li><label><input type="checkbox" id="meds"> Adwiytak l zarouriyye w painkillers</label></li>
+          <li><label><input type="checkbox" id="sanitizer"> Hand sanitizer w wipes</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-bolt icon"></i>Electronics</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="mobile"> Mobile w charger</label></li>
+          <li><label><input type="checkbox" id="powerBank"> Power bank</label></li>
+          <li><label><input type="checkbox" id="adapter"> Universal adapter</label></li>
+          <li><label><input type="checkbox" id="earphones"> Samma3et</label></li>
+        </ul>
+      </section>
+
+      <section class="card p-6">
+        <h2 class="card-header"><i class="fas fa-map-marked-alt icon"></i>Bas Tousal</h2>
+        <ul class="space-y-2">
+          <li><label><input type="checkbox" id="confirmCheckin"> T2akkad men l check-in bel otel</label></li>
+          <li><label><input type="checkbox" id="checkWifi"> Khod l password taba3 l Wi-Fi</label></li>
+          <li><label><input type="checkbox"id="transportInfo"> Sayyev ma3loumet 3an l bus w l taxi</label></li>
+          <li><label><input type="checkbox" id="emergencyNums"> Sayyev l ar2am l darouriyye</label></li>
+        </ul>
+      </section>
+
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const progress = document.getElementById('progress');
+      const totalCheckboxes = checkboxes.length;
+
+      function updateProgress() {
+        const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        const percentage = totalCheckboxes > 0 ? Math.round((checkedCount / totalCheckboxes) * 100) : 0;
+        progress.style.width = percentage + '%';
+        progress.textContent = percentage + '%';
+      }
+
+      checkboxes.forEach(el => {
+        const saved = localStorage.getItem(el.id);
+        if (saved === 'true') el.checked = true;
+        el.addEventListener('change', () => {
+          localStorage.setItem(el.id, el.checked);
+          updateProgress();
+        });
+      });
+
+      updateProgress();
+    });
+  </script>
+</body>
+</html>
